@@ -1,21 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+import { createStackNavigator } from 'react-navigation';
+import ItemsList from './screens/ItemsList'
+import AddNewItem from './screens/AddNewItem'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const Navigation = createStackNavigator({
+  ItemsList: { screen: ItemsList },
+  AddNewItem: { screen: AddNewItem }
 });
+
+export default Navigation;
+
