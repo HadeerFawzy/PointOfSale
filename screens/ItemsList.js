@@ -7,15 +7,31 @@ export default class ItemsList extends React.Component {
     title: 'Items List',
   };
 
+
+
+  constructor (props) {
+    super(props);
+    this.state = {
+      listArray: [ 'itemOne', 'itemTwo', 'itemThree', 'itemFour', 'itemFive', 'itemSix' ]
+    };
+  }
+
   render() {
+    var {navigate} = this.props.navigation;
     return (
       <View>
-        <Text>This is ItemsList SCREEN</Text>
+
+        {this.state.listArray.map((data, index, array) =>
+          <Text key={index}>{data}</Text>
+        )}
+
+    
         <Button
-          
+          onPress={
+            () => navigate("AddNewItem", {})
+          }
           title="Add New Item +"
           color="#CEA36A"
-          
         />
       </View>
     );

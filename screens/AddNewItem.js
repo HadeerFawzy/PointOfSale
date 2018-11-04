@@ -7,10 +7,11 @@ export default class AddNewItem extends React.Component {
     title: 'Add New Item',
   };
 
+
   render() {
     return (
       <View>
-        <Text>This is AddNewItem SCREEN</Text>
+        
       </View>
     );
   }
